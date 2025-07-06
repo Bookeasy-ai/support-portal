@@ -5,9 +5,9 @@ using Microsoft.JSInterop;
 using Syncfusion.Blazor.Navigations;
 using Syncfusion.Blazor.SplitButtons;
 
-namespace UI_Kit_Sample.Components.Pages.Support.Tickets
+namespace Support.Components.Pages.Support.Tickets
 {
-    public partial class Tickets
+    public partial class Tickets : ComponentBase
     {
 
         [Inject]

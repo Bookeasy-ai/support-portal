@@ -1,6 +1,8 @@
-namespace UI_Kit_Sample.Components.Pages.Support.Tickets
+using Microsoft.AspNetCore.Components;
+
+namespace Support.Components.Pages.Support.Tickets
 {
-    public partial class Chat
+    public partial class Chat : ComponentBase
     {
         private string ChatWidth { get; set; } = "max-width:608px";
 

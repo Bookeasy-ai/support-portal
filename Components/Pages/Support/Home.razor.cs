@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Components;
 
-namespace UI_Kit_Sample.Components.Pages
+namespace Support.Components.Pages
 {
-    public partial class Home
+    public partial class Home : ComponentBase
     {
         public string TicketFilterChecked = "Tickets";
         public List<Ticket> TicketData = new()

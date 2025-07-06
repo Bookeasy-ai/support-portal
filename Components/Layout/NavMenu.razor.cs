@@ -4,9 +4,9 @@ using Syncfusion.Blazor.SplitButtons;
 using System.Globalization;
 using Microsoft.AspNetCore.Components.Routing;
 
-namespace UI_Kit_Sample.Components.Layout
+namespace Support.Components.Layout
 {
-    public partial class NavMenu
+    public partial class NavMenu : ComponentBase, IDisposable
     {
         [Inject]
         private NavigationManager NavigationManager { get; set; }

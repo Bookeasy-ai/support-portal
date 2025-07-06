@@ -1,4 +1,4 @@
-namespace UI_Kit_Sample.Components.Pages.Support.Tickets
+namespace Support.Components.Pages.Support.Tickets
 {
     public class TicketData
     {

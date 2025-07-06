@@ -1,10 +1,10 @@
-@namespace UI_Kit_Sample.Components.Layout
+@namespace Support.Components.Layout
 
 @inject NavigationManager Navigation
 
-<section class="bg-white dark:bg-gray-950">
-    <div style="height: 600px;">
-        <SfSidebar class="bg-gray-50 dark:bg-gray-900 !border-r !border-gray-200 dark:!border-gray-700" Width="72px" Type="SidebarType.Push" MediaQuery="(min-width: 600px)">
+<section class="bg-white dark:bg-gray-950 h-screen">
+    <div class="h-full relative">
+        <SfSidebar @bind-IsOpen="@IsOpen" class="bg-gray-50 dark:bg-gray-900 !border-r !border-gray-200 dark:!border-gray-700" Width="72px" Type="SidebarType.Over" MediaQuery="(min-width: 600px)">
             <div class="pt-6">
                 <div class="flex justify-center items-center mb-3 px-3">
                     <img src="assets/images/common/brand-logos/svg/vector.svg" alt="company logo" />
@@ -26,5 +26,24 @@
                 </div>
             </div>
         </SfSidebar>
+        @if (IsOpen)
+        {
+            <button @onclick="ToggleSidebar" 
+                    class="absolute top-4 right-[-12px] z-50 p-2 rounded-full bg-white dark:bg-gray-800 shadow-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-all duration-200 border border-gray-200 dark:border-gray-600" 
+                    aria-label="Hide sidebar">
+                <span class="e-icons e-chevron-left text-gray-600 dark:text-gray-400 text-sm"></span>
+            </button>
+        }
     </div>
 </section>
+
+@code {
+    [Parameter] public bool IsOpen { get; set; } = true;
+    [Parameter] public EventCallback<bool> IsOpenChanged { get; set; }
+
+    public void ToggleSidebar()
+    {
+        IsOpen = !IsOpen;
+        IsOpenChanged.InvokeAsync(IsOpen);
+    }
+}

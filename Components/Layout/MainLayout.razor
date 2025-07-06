@@ -1,11 +1,31 @@
 ﻿@inherits LayoutComponentBase
 
- <section class="flex bg-gray-50 dark:bg-gray-950">
-    <div class="h-screen shrink-0">
-        <Sidebar />
+<section class="flex bg-gray-50 dark:bg-gray-950 min-h-screen">
+    <div class="shrink-0 relative">
+        <Sidebar @bind-IsOpen="@sidebarIsOpen" />
+        @if (!sidebarIsOpen)
+        {
+            <button @onclick="ToggleSidebarFromMain" 
+                    class="absolute top-4 left-2 z-50 p-2 rounded-full bg-white dark:bg-gray-800 shadow-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-all duration-200 border border-gray-200 dark:border-gray-600" 
+                    aria-label="Show sidebar">
+                <span class="e-icons e-chevron-right text-gray-600 dark:text-gray-400 text-sm"></span>
+            </button>
+        }
     </div>
-    <div class="main-container ml-auto">
+    <div class="flex-1 flex flex-col overflow-hidden" style="@(sidebarIsOpen ? "margin-left: 72px;" : "")">
         <NavMenu />                
-        @Body
+        <main class="flex-1 overflow-auto">
+            @Body
+        </main>
     </div>
 </section>
+
+@code {
+    private bool sidebarIsOpen = true;
+    private Sidebar sidebarRef;
+
+    private void ToggleSidebarFromMain()
+    {
+        sidebarIsOpen = !sidebarIsOpen;
+    }
+}

@@ -1,8 +1,9 @@
 
+using Microsoft.AspNetCore.Components;
 using Syncfusion.Blazor.RichTextEditor;
-namespace UI_Kit_Sample.Components.Pages.Support.Tickets
+namespace Support.Components.Pages.Support.Tickets
 {
-    public partial class CreateTicket
+    public partial class CreateTicket : ComponentBase
     {
         public string PlaceholderText = "Enter Description. Type / to open a list, and @mention can be used to notify an agent.";
         public List<object> BrandData = new List<object>

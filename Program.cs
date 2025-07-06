@@ -1,4 +1,4 @@
-using UI_Kit_Sample.Components;
+using Support.Components;
 using Syncfusion.Blazor;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -8,7 +8,7 @@ builder.Services.AddRazorComponents()
     
 builder.Services.AddSyncfusionBlazor();
 
-Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("");
+Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MzkzNjE5M0AzMjM5MmUzMDJlMzAzYjMyMzkzYmFIQ0Z5SUN6QVBMVmM5bHBWQm82MWFHc0l4WlNtWUQ0NUw2TmRWU084N289");
 
 var app = builder.Build();
 

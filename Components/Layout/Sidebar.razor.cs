@@ -1,9 +1,9 @@
 using Microsoft.AspNetCore.Components;
 using Syncfusion.Blazor.Lists;
 
-namespace UI_Kit_Sample.Components.Layout
+namespace Support.Components.Layout
 {
-    public partial class Sidebar
+    public partial class Sidebar : ComponentBase
     {
         [Inject]
         private NavigationManager NavigationManager { get; set; }

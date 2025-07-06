@@ -2,9 +2,9 @@
 using Microsoft.JSInterop;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
-namespace UI_Kit_Sample.Components.Pages.Support.Tickets
+namespace Support.Components.Pages.Support.Tickets
 {
-    public partial class Contact
+    public partial class Contact : ComponentBase
     {
 
         [Inject]
